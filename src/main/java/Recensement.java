@@ -28,7 +28,7 @@ public class Recensement {
 
             while (scanner.hasNext()) {
                 String line = scanner.nextLine();
-                Object actualVille = scanner.equals();
+                //Object actualVille = scanner.equals();
                 if(scanner.equals(nomRegion)) {
                     System.out.println(line);
                 }
