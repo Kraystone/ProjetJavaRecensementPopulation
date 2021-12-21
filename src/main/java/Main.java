@@ -8,14 +8,15 @@ import java.util.*;
 
 public class Main {
 
-    public static void main(String[] args) throws FileNotFoundException {
-        Recensement recensement = new Recensement();
+    public static void main(String[] args) throws IOException {
+        ReaderCsv reader = new ReaderCsv();
+       // reader.readData();
+
         Jeu jeu = new Jeu();
-        recensement.populationRegion("Hauts-de-France");
-
-
-
-
+        while (true) {
+            //jeu.menu();
+            System.out.println(reader.createListVille().get(1));
+        }
 
 
     }

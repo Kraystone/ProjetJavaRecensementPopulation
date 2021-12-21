@@ -16,8 +16,8 @@ public class Jeu {
         return enVie;
     }
 
-    public void menu(boolean enVie) {
-        if (enVie) {
+    public void menu() {
+        while (this.enVie) {
             System.out.println("Bienvenue dans le jeu de recensement de ville que voulez vous faire ?");
             System.out.println("""
                     1- Voir la population d'une ville

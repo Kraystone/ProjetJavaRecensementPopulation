@@ -1,31 +1,25 @@
-import java.util.*;
-
 public class Ville {
 
     private int codeRegion;
     private String nomRegion;
     private int codeDepartement;
-    private String nomDepartement;
     private int codeCommune;
     private String nomCommune;
     private int populationTotal;
 
-    public Ville(int codeRegion, String nomRegion, int codeDepartement, String nomDepartement, int codeCommune, String nomCommune, int populationTotal) {
+    public Ville(int codeRegion, String nomRegion, int codeDepartement, int codeCommune, String nomCommune, int populationTotal) {
         this.codeRegion = codeRegion;
         this.nomRegion = nomRegion;
         this.codeDepartement = codeDepartement;
-        this.nomDepartement = nomDepartement;
         this.codeCommune = codeCommune;
         this.nomCommune = nomCommune;
         this.populationTotal = populationTotal;
     }
 
-    public Ville(String codeRegion, String nomRegion, String codeDepartement, String codeCommune, String nomCommune, String population) {
-    }
-
     public Ville() {
 
     }
+
 
     public int getCodeRegion() {
         return codeRegion;
@@ -49,14 +43,6 @@ public class Ville {
 
     public void setCodeDepartement(int codeDepartement) {
         this.codeDepartement = codeDepartement;
-    }
-
-    public String getNomDepartement() {
-        return nomDepartement;
-    }
-
-    public void setNomDepartement(String nomDepartement) {
-        this.nomDepartement = nomDepartement;
     }
 
     public int getCodeCommune() {
@@ -83,8 +69,16 @@ public class Ville {
         this.populationTotal = populationTotal;
     }
 
-    public List<Ville> createVille() {
-
-        return Collections.emptyList();
+    @Override
+    public String toString() {
+        return "Ville{" +
+                "codeRegion=" + codeRegion +
+                ", nomRegion='" + nomRegion + '\'' +
+                ", codeDepartement=" + codeDepartement +
+                ", codeCommune=" + codeCommune +
+                ", nomCommune='" + nomCommune + '\'' +
+                ", populationTotal=" + populationTotal +
+                '}';
     }
+
 }
