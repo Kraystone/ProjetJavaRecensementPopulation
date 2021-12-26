@@ -1,3 +1,5 @@
+package fr.epsi.b3.recensement;
+
 import com.opencsv.CSVParser;
 import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
@@ -9,10 +11,11 @@ import java.util.logging.*;
 
 public class ReaderCsv {
 
-    public static final String FILE = "C:\\Users\\leo_catifait\\IdeaProjects\\ProjetJavaRecensementPopulation\\src\\main\\resources\\recensement_2016.csv";
-    private static final Logger LOGGER = Logger.getLogger("ReaderCsv");
+    //public static final String FILE = "C:\\Users\\leo_catifait\\IdeaProjects\\ProjetJavaRecensementPopulation\\src\\main\\resources\\recensement_2016.csv";
+    public static final String FILE = "C:\\Users\\leote\\IdeaProjects\\ProjetJavaRecensementPopulation\\src\\main\\resources\\\\recensement_2016.csv";
+    private static final Logger LOGGER = Logger.getLogger("fr.epsi.b3.recensement.ReaderCsv");
 
-    public List<String[]> readData() {
+    public void readData() {
         List<String[]> allData = null;
         try {
             FileReader filereader = new FileReader(FILE);
@@ -33,32 +36,32 @@ public class ReaderCsv {
             // Print Data.
             for (String[] row : allData) {
                 for (String cell : row) {
-                    System.out.print(cell + "\t");
+                    System.out.print(cell + "\t|");
                 }
                 System.out.println();
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return allData;
+        //return allData;
     }
 
     public List<Ville> createListVille() throws IOException {
         List<Ville> listvilles = new ArrayList<>();
-        String line = null;
+        String str=null;
 
-        FileReader fileReader = new FileReader(FILE);
-        BufferedReader bufferedReader = new BufferedReader(fileReader);
+        LineNumberReader bufferedReader = new LineNumberReader(new FileReader(FILE));
+        bufferedReader.getLineNumber();
+        while ((str = bufferedReader.readLine()) != null) {
 
-        while ((line = bufferedReader.readLine()) != null) {
-            String[] data = line.split(";");
-            int codeRegionData = Integer.parseInt(data[0]);
+            String[] data = str.split(";");
+            String codeRegionData = data[0];
             String nomRegionData = data[1];
-            int codeDepartementData = Integer.parseInt(data[2]);
-            int codeCommuneData = Integer.parseInt(data[5]);
+            String codeDepartementData = data[2];
+            String codeCommuneData = data[5];
             String nomCommuneData = data[6];
-            int populationData = Integer.parseInt(data[7]);
-            listvilles.add(new Ville(codeRegionData, nomRegionData, codeDepartementData, codeCommuneData, nomCommuneData, populationData));
+            String populationData = data[7];
+            listvilles.add(new Ville(Integer.parseInt(codeRegionData), nomRegionData, Integer.parseInt(codeDepartementData), Integer.parseInt(codeCommuneData), nomCommuneData, Integer.parseInt(populationData)));
         }
         return listvilles;
     }

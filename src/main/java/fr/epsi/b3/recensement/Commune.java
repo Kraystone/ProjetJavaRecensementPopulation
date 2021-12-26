@@ -1,3 +1,5 @@
+package fr.epsi.b3.recensement;
+
 public class Commune extends Ville{
 
     private static int codeCommune;

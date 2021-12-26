@@ -1,3 +1,5 @@
+package fr.epsi.b3.recensement;
+
 import java.util.*;
 
 public class Recensement {

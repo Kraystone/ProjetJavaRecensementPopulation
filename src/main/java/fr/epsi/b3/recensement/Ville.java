@@ -1,3 +1,5 @@
+package fr.epsi.b3.recensement;
+
 public class Ville {
 
     private int codeRegion;
@@ -71,7 +73,7 @@ public class Ville {
 
     @Override
     public String toString() {
-        return "Ville{" +
+        return "fr.epsi.b3.recensement.Ville{" +
                 "codeRegion=" + codeRegion +
                 ", nomRegion='" + nomRegion + '\'' +
                 ", codeDepartement=" + codeDepartement +
