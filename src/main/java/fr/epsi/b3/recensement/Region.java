@@ -2,17 +2,17 @@ package fr.epsi.b3.recensement;
 
 public class Region extends Ville{
 
-    private static int codeRegion;
+    private static String codeRegion;
     private static String nomRegion;
 
     public Region() {
     }
 
-    public int getCodeRegion() {
+    public String getCodeRegion() {
         return codeRegion;
     }
 
-    public void setCodeRegion(int codeRegion) {
+    public void setCodeRegion(String codeRegion) {
         Region.codeRegion = codeRegion;
     }
 

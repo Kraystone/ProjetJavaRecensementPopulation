@@ -3,7 +3,7 @@ package fr.epsi.b3.recensement;
 public class Departement extends Ville{
 
 
-    private static int codeDepartement;
+    private static String codeDepartement;
     private static String nomDepartement;
 
 
@@ -11,11 +11,11 @@ public class Departement extends Ville{
         super();
     }
 
-    public int getCodeDepartement() {
+    public String getCodeDepartement() {
         return codeDepartement;
     }
 
-    public void setCodeDepartement(int codeDepartement) {
+    public void setCodeDepartement(String codeDepartement) {
         Departement.codeDepartement = codeDepartement;
     }
 

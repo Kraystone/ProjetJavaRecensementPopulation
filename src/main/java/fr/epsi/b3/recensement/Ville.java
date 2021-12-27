@@ -2,14 +2,14 @@ package fr.epsi.b3.recensement;
 
 public class Ville {
 
-    private int codeRegion;
+    private String codeRegion;
     private String nomRegion;
-    private int codeDepartement;
-    private int codeCommune;
+    private String codeDepartement;
+    private String codeCommune;
     private String nomCommune;
     private int populationTotal;
 
-    public Ville(int codeRegion, String nomRegion, int codeDepartement, int codeCommune, String nomCommune, int populationTotal) {
+    public Ville(String codeRegion, String nomRegion, String codeDepartement, String codeCommune, String nomCommune, int populationTotal) {
         this.codeRegion = codeRegion;
         this.nomRegion = nomRegion;
         this.codeDepartement = codeDepartement;
@@ -22,12 +22,11 @@ public class Ville {
 
     }
 
-
-    public int getCodeRegion() {
+    public String getCodeRegion() {
         return codeRegion;
     }
 
-    public void setCodeRegion(int codeRegion) {
+    public void setCodeRegion(String codeRegion) {
         this.codeRegion = codeRegion;
     }
 
@@ -39,19 +38,19 @@ public class Ville {
         this.nomRegion = nomRegion;
     }
 
-    public int getCodeDepartement() {
+    public String getCodeDepartement() {
         return codeDepartement;
     }
 
-    public void setCodeDepartement(int codeDepartement) {
+    public void setCodeDepartement(String codeDepartement) {
         this.codeDepartement = codeDepartement;
     }
 
-    public int getCodeCommune() {
+    public String getCodeCommune() {
         return codeCommune;
     }
 
-    public void setCodeCommune(int codeCommune) {
+    public void setCodeCommune(String codeCommune) {
         this.codeCommune = codeCommune;
     }
 

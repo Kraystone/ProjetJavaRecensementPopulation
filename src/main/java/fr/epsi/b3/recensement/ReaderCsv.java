@@ -11,8 +11,8 @@ import java.util.logging.*;
 
 public class ReaderCsv {
 
-    //public static final String FILE = "C:\\Users\\leo_catifait\\IdeaProjects\\ProjetJavaRecensementPopulation\\src\\main\\resources\\recensement_2016.csv";
-    public static final String FILE = "C:\\Users\\leote\\IdeaProjects\\ProjetJavaRecensementPopulation\\src\\main\\resources\\\\recensement_2016.csv";
+    public static final String FILE = "C:\\Users\\leo_catifait\\IdeaProjects\\ProjetJavaRecensementPopulation\\src\\main\\resources\\recensement_2016.csv";
+    //public static final String FILE = "C:\\Users\\leote\\IdeaProjects\\ProjetJavaRecensementPopulation\\src\\main\\resources\\recensement_2016.csv";
     private static final Logger LOGGER = Logger.getLogger("fr.epsi.b3.recensement.ReaderCsv");
 
     public void readData() {
@@ -50,19 +50,19 @@ public class ReaderCsv {
         List<Ville> listvilles = new ArrayList<>();
         String str=null;
 
-        LineNumberReader bufferedReader = new LineNumberReader(new FileReader(FILE));
-        bufferedReader.getLineNumber();
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(FILE));
+        bufferedReader.readLine(); // passe la première ligne
         while ((str = bufferedReader.readLine()) != null) {
-
             String[] data = str.split(";");
             String codeRegionData = data[0];
             String nomRegionData = data[1];
             String codeDepartementData = data[2];
             String codeCommuneData = data[5];
             String nomCommuneData = data[6];
-            String populationData = data[7];
-            listvilles.add(new Ville(Integer.parseInt(codeRegionData), nomRegionData, Integer.parseInt(codeDepartementData), Integer.parseInt(codeCommuneData), nomCommuneData, Integer.parseInt(populationData)));
+            String populationData = data[7].trim().replace(" ","");
+            listvilles.add(new Ville(codeRegionData, nomRegionData, codeDepartementData, codeCommuneData, nomCommuneData, Integer.parseInt(populationData)));
         }
+        System.out.println("La liste des villes a été crée.");
         return listvilles;
     }
 }

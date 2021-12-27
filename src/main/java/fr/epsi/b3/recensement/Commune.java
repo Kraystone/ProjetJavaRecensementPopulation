@@ -2,18 +2,18 @@ package fr.epsi.b3.recensement;
 
 public class Commune extends Ville{
 
-    private static int codeCommune;
+    private static String codeCommune;
     private static String nomCommune;
 
 
     public Commune() {
     }
 
-    public int getCodeCommune() {
+    public String getCodeCommune() {
         return codeCommune;
     }
 
-    public void setCodeCommune(int codeCommune) {
+    public void setCodeCommune(String codeCommune) {
         Commune.codeCommune = codeCommune;
     }
 
