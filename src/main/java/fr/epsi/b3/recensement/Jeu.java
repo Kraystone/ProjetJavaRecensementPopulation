@@ -1,8 +1,11 @@
 package fr.epsi.b3.recensement;
 
+import java.io.*;
 import java.util.*;
 
 public class Jeu {
+
+    Recensement recensement = new Recensement();
 
     private boolean enVie = true;
 
@@ -18,7 +21,7 @@ public class Jeu {
         return enVie;
     }
 
-    public void menu() {
+    public void menu() throws IOException, InterruptedException {
         while (this.enVie) {
             System.out.println("Bienvenue dans le jeu de recensement de ville que voulez vous faire ?");
             System.out.println("""
@@ -31,21 +34,24 @@ public class Jeu {
                     7- Afficher les 10 villes les plus peuplées d’une région
                     8- Afficher les 10 villes les plus peuplées de France
                     9- Se deconnecter
+                    
+                    ####################################################################################
+                    
                     Entrer un chiffre entre 1 et 9.""");
 
 
             Scanner sc = new Scanner(System.in);
             int choix = sc.nextInt();
             switch (choix) {
-                case 1 -> System.out.println("Bonjour");
-                case 2 -> System.out.println("Hello");
-                case 3 -> System.out.println("Buenos dias");
+                case 1 -> recensement.populationVille();
+                case 2 -> recensement.populationDepartement();
+                case 3 -> recensement.populationRegion();
                 case 4 -> System.out.println("");
                 case 5 -> System.out.println("");
                 case 6 -> System.out.println("");
                 case 7 -> System.out.println("");
                 case 8 -> System.out.println("");
-                case 9 -> System.out.println("");
+                case 9 -> setEnVie(false);
                 default -> System.out.println("Choix incorrect");
             }
         }

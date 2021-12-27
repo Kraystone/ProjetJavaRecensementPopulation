@@ -1,5 +1,7 @@
 package fr.epsi.b3.recensement;
 
+import java.util.*;
+
 public class Ville {
 
     private String codeRegion;
@@ -20,6 +22,10 @@ public class Ville {
 
     public Ville() {
 
+    }
+
+    public Ville(String nomCommune) {
+        this.nomCommune = nomCommune;
     }
 
     public String getCodeRegion() {
@@ -81,5 +87,5 @@ public class Ville {
                 ", populationTotal=" + populationTotal +
                 '}';
     }
-
+    public static Comparator<Ville> villeComparator = Comparator.comparingInt(Ville::getPopulationTotal);
 }

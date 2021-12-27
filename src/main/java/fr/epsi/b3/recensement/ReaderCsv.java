@@ -62,7 +62,7 @@ public class ReaderCsv {
             String populationData = data[7].trim().replace(" ","");
             listvilles.add(new Ville(codeRegionData, nomRegionData, codeDepartementData, codeCommuneData, nomCommuneData, Integer.parseInt(populationData)));
         }
-        System.out.println("La liste des villes a été crée.");
+        //System.out.println("La liste des villes a été crée.");
         return listvilles;
     }
 }

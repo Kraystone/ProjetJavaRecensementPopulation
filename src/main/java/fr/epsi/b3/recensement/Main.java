@@ -4,17 +4,16 @@ import java.io.*;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
         ReaderCsv reader = new ReaderCsv();
-       //reader.readData();
-        System.out.println(reader.createListVille());
-
         Jeu jeu = new Jeu();
-        while (true) {
-            //jeu.menu();
-//            reader.createListVille();
+        Recensement recensement = new Recensement();
 
-        }
+//        while (jeu.isEnVie()) {
+//            jeu.menu();
+//            reader.createListVille();
+//        }
+        recensement.topRegionPop();
 
 
     }
