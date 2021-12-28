@@ -1,7 +1,5 @@
 package fr.epsi.b3.recensement;
 
-import java.util.*;
-
 public class Region extends Ville{
 
     private static String codeRegion;

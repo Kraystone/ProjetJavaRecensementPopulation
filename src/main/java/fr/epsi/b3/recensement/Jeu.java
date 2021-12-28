@@ -43,14 +43,33 @@ public class Jeu {
             Scanner sc = new Scanner(System.in);
             int choix = sc.nextInt();
             switch (choix) {
-                case 1 -> recensement.populationVille();
-                case 2 -> recensement.populationDepartement();
-                case 3 -> recensement.populationRegion();
-                case 4 -> System.out.println("");
-                case 5 -> System.out.println("");
-                case 6 -> System.out.println("");
-                case 7 -> System.out.println("");
-                case 8 -> System.out.println("");
+                case 1 -> {
+                    System.out.println("Donnez un nom de ville.");
+                    recensement.populationVille(sc.next());
+                }
+                case 2 -> {
+                    System.out.println("Donnez un code de departement.");
+                    recensement.populationDepartement(sc.next());
+                }
+                case 3 -> {
+                    System.out.println("Donnez un nom de region.");
+                    recensement.populationRegion(sc.next());
+                }
+
+                case 4 -> recensement.topRegionPop();
+
+                case 5 -> recensement.topDepartementPop();
+
+                case 6 -> {
+                    System.out.println("Donnez un code de departement (Si inferieure a 10 mettre un 0 avant).");
+                    recensement.topPopVillesDepartement(sc.next());
+                }
+                case 7 -> {
+                    System.out.println("Donnez un nom de region.");
+                    recensement.topPopVillesRegion(sc.next());
+                }
+                case 8 -> recensement.topPopFrance();
+
                 case 9 -> setEnVie(false);
                 default -> System.out.println("Choix incorrect");
             }

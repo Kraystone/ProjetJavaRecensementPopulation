@@ -1,7 +1,5 @@
 package fr.epsi.b3.recensement;
 
-import fr.epsi.b3.recensement.Ville;
-
 import java.util.*;
 
 public class Sortbyroll implements Comparator<Ville> {
