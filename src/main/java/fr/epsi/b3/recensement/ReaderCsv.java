@@ -1,54 +1,16 @@
 package fr.epsi.b3.recensement;
 
-import com.opencsv.CSVParser;
-import com.opencsv.CSVParserBuilder;
-import com.opencsv.CSVReader;
-import com.opencsv.CSVReaderBuilder;
-
 import java.io.*;
 import java.util.*;
-import java.util.logging.*;
 
 public class ReaderCsv {
 
-    public static final String FILE = "C:\\Users\\leo_catifait\\IdeaProjects\\ProjetJavaRecensementPopulation\\src\\main\\resources\\recensement_2016.csv";
-    //public static final String FILE = "C:\\Users\\leote\\IdeaProjects\\ProjetJavaRecensementPopulation\\src\\main\\resources\\recensement_2016.csv";
-    private static final Logger LOGGER = Logger.getLogger("fr.epsi.b3.recensement.ReaderCsv");
+    public static final String FILE = "src/main/resources/recensement_2016.csv";
 
-    public void readData() {
-        List<String[]> allData = null;
-        try {
-            FileReader filereader = new FileReader(FILE);
-
-            // create csvParser object with
-            // custom separator semi-colon
-            CSVParser parser = new CSVParserBuilder().withSeparator(';').build();
-
-            // create csvReader object with parameter
-            // filereader and parser
-            CSVReader csvReader = new CSVReaderBuilder(filereader)
-                    .withCSVParser(parser)
-                    .build();
-
-            // Read all data at once
-            allData = csvReader.readAll();
-
-            // Print Data.
-            for (String[] row : allData) {
-                for (String cell : row) {
-                    System.out.print(cell + "\t|");
-                }
-                System.out.println();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        //return allData;
-    }
 
     public List<Ville> createListVille() throws IOException {
         List<Ville> listvilles = new ArrayList<>();
-        String str=null;
+        String str;
 
         BufferedReader bufferedReader = new BufferedReader(new FileReader(FILE));
         bufferedReader.readLine(); // passe la première ligne
@@ -62,7 +24,6 @@ public class ReaderCsv {
             String populationData = data[7].trim().replace(" ","");
             listvilles.add(new Ville(codeRegionData, nomRegionData, codeDepartementData, codeCommuneData, nomCommuneData, Integer.parseInt(populationData)));
         }
-        //System.out.println("La liste des villes a été crée.");
         return listvilles;
     }
 }

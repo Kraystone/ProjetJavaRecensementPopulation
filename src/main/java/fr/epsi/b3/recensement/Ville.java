@@ -87,5 +87,6 @@ public class Ville {
                 ", populationTotal=" + populationTotal +
                 '}';
     }
-    public static Comparator<Ville> villeComparator = Comparator.comparingInt(Ville::getPopulationTotal);
+
+    public static final Comparator<Ville> villeComparator = Comparator.comparingInt(Ville::getPopulationTotal);
 }

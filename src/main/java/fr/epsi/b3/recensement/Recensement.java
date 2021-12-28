@@ -2,7 +2,6 @@ package fr.epsi.b3.recensement;
 
 import java.io.*;
 import java.util.*;
-import java.util.concurrent.*;
 
 public class Recensement {
 
@@ -19,19 +18,18 @@ public class Recensement {
     }
 
 
-    public void populationVille(String nomVille_user) throws IOException, InterruptedException {
-        data = reader.createListVille();
+    public void populationVille(String nomVille_user) throws IOException {
+        data = reader.  createListVille();
 
         for (Ville datum : data) {
             if (Objects.equals(datum.getNomCommune(), nomVille_user)) {
                 System.out.println("La ville " + datum.getNomCommune() + " a " + datum.getPopulationTotal() + " habitants.\n");
-                TimeUnit.SECONDS.sleep(10);
             }
         }
     }
 
 
-    public void populationDepartement(String codeDepartement_user) throws IOException, InterruptedException {
+    public void populationDepartement(String codeDepartement_user) throws IOException {
         data = reader.createListVille();
         int nbPop = 0;
 
@@ -41,7 +39,6 @@ public class Recensement {
             }
         }
         System.out.println("Le departement avec le code " + codeDepartement_user + " a " + nbPop + " habitants.\n");
-        TimeUnit.SECONDS.sleep(10);
     }
 
 

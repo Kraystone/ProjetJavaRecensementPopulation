@@ -48,7 +48,7 @@ public class Jeu {
                     recensement.populationVille(sc.next());
                 }
                 case 2 -> {
-                    System.out.println("Donnez un code de departement.");
+                    System.out.println("Donnez un code de departement (Si inferieure a 10 mettre un 0 avant).");
                     recensement.populationDepartement(sc.next());
                 }
                 case 3 -> {
@@ -71,6 +71,7 @@ public class Jeu {
                 case 8 -> recensement.topPopFrance();
 
                 case 9 -> setEnVie(false);
+
                 default -> System.out.println("Choix incorrect");
             }
         }

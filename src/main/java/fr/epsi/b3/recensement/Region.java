@@ -7,7 +7,7 @@ public class Region extends Ville{
 
     public Region() {
     }
-
+    
     public String getCodeRegion() {
         return codeRegion;
     }
